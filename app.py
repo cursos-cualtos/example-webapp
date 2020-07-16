@@ -17,3 +17,9 @@ def variables():
 def listing():
     my_list = ['apples', 'oranges', 'grapes', 'pineapples', 'pears', 'watermelons']
     return render_template('listing.html', fruits=my_list)
+
+@app.route('/fruits/<id>')
+def fruits(id):
+    my_list = ['apples', 'oranges', 'grapes', 'pineapples', 'pears', 'watermelons']
+    fruit = my_list[int(id):int(id) + 1]
+    return render_template('listing.html', fruits=fruit)
