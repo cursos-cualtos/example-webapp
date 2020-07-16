@@ -15,5 +15,5 @@ def variables():
 
 @app.route('/listing')
 def listing():
-    my_list = []
-    return ''
+    my_list = ['apples', 'oranges', 'grapes', 'pineapples', 'pears', 'watermelons']
+    return render_template('listing.html', fruits=my_list)
