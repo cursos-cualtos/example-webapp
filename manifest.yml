@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  name: frontend-test
+  routes:
+    - route: flask-frontend-example-0.mybluemix.net
+  disk_quota: 1024M
+  buildpacks:
+    - python_buildpack
