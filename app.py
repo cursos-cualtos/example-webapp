@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from utils import get_message
 
 app = Flask(__name__)
 
@@ -23,3 +24,8 @@ def fruits(id):
     my_list = ['apples', 'oranges', 'grapes', 'pineapples', 'pears', 'watermelons']
     fruit = my_list[int(id):int(id) + 1]
     return render_template('listing.html', fruits=fruit)
+
+@app.route('/messages')
+def messages():
+    message = get_message()
+    return render_template('messages.html', message=message)
