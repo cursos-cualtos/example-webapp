@@ -2,10 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
         <title>Index</title>
     </head>
     <body>
         <h1>Welcome to the app</h1>
         <p>{{ message }}</p>
+        <img src="{{ url_for('static', filename='images/image.png') }}" alt="imagen">
     </body>
 </html>
