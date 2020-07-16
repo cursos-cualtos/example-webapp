@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 from utils import get_message
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
+port = int(os.getenv('PORT', 8000))
 
 @app.route('/')
 def index():
@@ -29,3 +31,6 @@ def fruits(id):
 def messages():
     message = get_message()
     return render_template('messages.html', message=message)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=port, debug=True)
